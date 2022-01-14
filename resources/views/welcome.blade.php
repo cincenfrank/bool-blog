@@ -24,7 +24,7 @@
                     {{-- <div class="small text-muted"></div> --}}
                     <h2 class="card-title h4">{{ $post->title }}</h2>
                     <p class=“card-text”>{{ $post->content }}</p>
-                    {{-- <a class="btn btn-primary" href="{{ route("posts.show") }}">Read more</a> --}}
+                    <a class="btn btn-primary" href="{{ route("posts.show", $post->id) }}">Read more</a>
                 </div>
             </div>  
         </div> 
