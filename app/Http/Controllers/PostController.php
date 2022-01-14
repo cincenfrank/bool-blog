@@ -14,7 +14,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::all();
+
+        return view("welcome", compact("posts"));
     }
 
     /**
@@ -41,7 +43,7 @@ class PostController extends Controller
         $post->fill($request->all());
         $post->save();
 
-        return redirect()->route("home.index");
+        return redirect()->route("posts.index");
     }
 
     /**
