@@ -26,7 +26,7 @@
                         <!-- Post title-->
                         <h1 class="fw-bolder mb-1">{{ $post->title }} </h1>
                         <!-- Post meta content-->
-                        {{-- <div class="text-muted fst-italic mb-2">Posted on January 1, 2021 by Start Bootstrap</div> --}}
+                        <div class="text-muted fst-italic mb-2">Posted on {{$post->created_at }} by {{$post->author }}</div>
                         <!-- Post categories-->
                         <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{ $post->category }}</a>
                         {{-- <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a> --}}
