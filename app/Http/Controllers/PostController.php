@@ -80,7 +80,7 @@ class PostController extends Controller
     {
         $data = $request->all();
         $post->update($data);
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.show', $post->id);
 
     }
 
