@@ -17,6 +17,13 @@
     <p> {{ $post->content }}</p>
 
     <a class="btn btn-primary" href="{{ route("posts.edit", $post->id) }}">modifica</a>
+    <form action="{{route("posts.destroy", $post->id)}}" method="post">
+        @csrf
+        @method("DELETE")
+
+        <button type="submit" class="btn btn-danger">Elimina</button>
+    </form>
+
 
 </div>
 @endsection
