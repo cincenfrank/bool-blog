@@ -12,17 +12,51 @@
 @endsection
 @section('main_content')
 <div class="container">
-    
-    <h1> {{ $post->title }} </h1>
-    <p> {{ $post->content }}</p>
 
-    <a class="btn btn-primary" href="{{ route("posts.edit", $post->id) }}">modifica</a>
-    <form action="{{route("posts.destroy", $post->id)}}" method="post">
+    {{-- <h1> {{ $post->title }} </h1>
+    <p> {{ $post->content }}</p> --}}
+    <!-- Page content-->
+    <div class="container mt-5">
+        <div class="row ">
+            <div class="col-lg-8">
+                <!-- Post content-->
+                <article>
+                    <!-- Post header-->
+                    <header class="mb-4">
+                        <!-- Post title-->
+                        <h1 class="fw-bolder mb-1">{{ $post->title }} </h1>
+                        <!-- Post meta content-->
+                        {{-- <div class="text-muted fst-italic mb-2">Posted on January 1, 2021 by Start Bootstrap</div> --}}
+                        <!-- Post categories-->
+                        <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{ $post->category }}</a>
+                        {{-- <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a> --}}
+                    </header>
+                    <!-- Preview image figure-->
+                    <figure class="mb-4"><img class="img-fluid rounded" src="{{ $post->coverImg }} " alt="..." /></figure>
+                    <!-- Post content-->
+                    <section class="mb-5">
+                        {{ $post->content }}
+                    </section>
+                </article>
+                <!-- Comments section-->
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <a class="btn btn-primary m-3" href="{{ route("posts.edit", $post->id) }}">modifica</a>
+
+
+    <form action="{{route("posts.destroy", $post->id)}}" method="post" class="m-3">
         @csrf
         @method("DELETE")
 
         <button type="submit" class="btn btn-danger">Elimina</button>
     </form>
+
+
 
 
 </div>
