@@ -18,7 +18,7 @@
         <div class="col">
             <div class="card mb-4 h-100">
                 @if ($post->coverImg)
-                <a href=“#!“><img class="card-img-top" src="{{ $post->coverImg }}" alt=“post_image”/></a>
+                <a href="{{ route("posts.show", $post->id) }}"><img class="card-img-top" src="{{ $post->coverImg }}" alt=“post_image” /></a>
                 @endif
                 <div class=“card-body”>
                     {{-- <div class="small text-muted"></div> --}}
@@ -26,8 +26,8 @@
                     <p class=“card-text”>{{ $post->content }}</p>
                     <a class="btn btn-primary" href="{{ route("posts.show", $post->id) }}">Read more</a>
                 </div>
-            </div>  
-        </div> 
+            </div>
+        </div>
         @endforeach
     </div>
 </div>
