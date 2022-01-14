@@ -11,5 +11,24 @@
 </header>
 @endsection
 @section('main_content')
-<h2>Main Content - Welcome</h2>
+<div class="container">
+    <div class="row row-cols-4 g-3">
+        @foreach ($posts as $post)
+        {{-- @dump($post) --}}
+        <div class="col">
+            <div class="card mb-4 h-100">
+                @if ($post->coverImg)
+                <a href=“#!“><img class="card-img-top" src="{{ $post->coverImg }}" alt=“post_image”/></a>
+                @endif
+                <div class=“card-body”>
+                    {{-- <div class="small text-muted"></div> --}}
+                    <h2 class="card-title h4">{{ $post->title }}</h2>
+                    <p class=“card-text”>{{ $post->content }}</p>
+                    {{-- <a class="btn btn-primary" href="{{ route("posts.show") }}">Read more</a> --}}
+                </div>
+            </div>  
+        </div> 
+        @endforeach
+    </div>
+</div>
 @endsection
